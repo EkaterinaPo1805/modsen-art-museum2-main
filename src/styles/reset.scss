@@ -1,0 +1,160 @@
+body {
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+	font-weight: 400;
+	background: $primary;
+	width: 100%;
+	font-family: 'Lexend Deca', sans-serif;
+}
+
+.page {
+	display: flex;
+	flex-direction: column;
+	gap: 120px;
+
+	@include media-query('desktop') {
+		gap: 80px;
+	}
+
+	@include media-query('tablet') {
+		gap: 60px;
+	}
+}
+
+a {
+	color: $light;
+	text-decoration: none;
+	margin: 0px;
+	padding: 0;
+}
+
+input,
+button {
+	border: none;
+	outline: none;
+	padding: 0;
+	margin: 0;
+	height: auto;
+	background-color: transparent;
+}
+
+h1 {
+	padding: 0;
+	margin: 0;
+	@include font-style('Lexend Deca', 700, 64px);
+	text-transform: capitalize;
+	color: $black;
+	text-align: center;
+
+	span {
+		color: $orange;
+	}
+
+	@include media-query('desktop') {
+		font-size: 48px;
+	}
+
+	@include media-query('tablet') {
+		font-size: 32px;
+	}
+}
+
+h2 {
+	padding: 0;
+	margin: 0;
+	@include font-style('Lexend Deca', 400, 32px);
+	color: $black;
+
+	@include media-query('desktop') {
+		font-size: 24px;
+	}
+
+	@include media-query('tablet') {
+		font-size: 20px;
+	}
+}
+
+h3 {
+	padding: 0;
+	margin: 0;
+	@include font-style('Lexend Deca', 400, 16px);
+	color: $lightOrange;
+
+	@include media-query('desktop') {
+		font-size: 14px;
+	}
+
+	@include media-query('tablet') {
+		font-size: 12px;
+	}
+}
+
+.search-container {
+	display: flex;
+	flex-direction: column;
+	gap: 72px;
+	align-items: center;
+	align-self: center;
+	width: 762px;
+
+	@include media-query('desktop') {
+		width: 100%;
+		gap: 60px;
+	}
+}
+
+.card-container {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	align-items: center;
+	align-self: center;
+	width: 100%;
+}
+
+.title {
+	display: flex;
+	flex-direction: column;
+	gap: 0px;
+	align-items: center;
+}
+
+.section-title {
+	display: flex;
+	flex-direction: column;
+	gap: 0px;
+	align-items: center;
+}
+
+.color {
+	color: $lightOrange;
+}
+
+.favorites-title {
+	display: flex;
+	flex-direction: row;
+	gap: 4px;
+}
+
+.bookmark {
+	width: 74px;
+	height: 74px;
+	align-self: center;
+
+	@include media-query('desktop') {
+		width: 48px;
+		height: 48px;
+	}
+
+	@include media-query('tablet') {
+		width: 32px;
+		height: 32px;
+	}
+}
+
+.favorites-card {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
