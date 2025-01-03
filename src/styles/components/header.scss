@@ -1,0 +1,135 @@
+section.header {
+	background: linear-gradient(
+		90deg,
+		#343333 38.05%,
+		#484848 69.22%,
+		#282828 98.98%
+	);
+	padding: 32px 0;
+	width: auto;
+
+	@include media-query('desktop') {
+		padding: 28px 50px;
+	}
+
+	@include media-query('tablet') {
+		padding: 24px 16px;
+	}
+}
+
+header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+	width: 1280px;
+
+	@include media-query('desktop') {
+		justify-content: space-between;
+		width: auto;
+	}
+
+	@include media-query('tablet') {
+		justify-content: space-between;
+		width: auto;
+	}
+}
+
+.navigation {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 16px;
+
+	&-item {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 4px;
+		font-family: 'Inter', sans-serif;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 22px;
+		color: white;
+		text-decoration: none;
+		width: auto;
+		margin-bottom: 0 !important;
+
+		@include media-query('tablet') {
+			width: 100%;
+		}
+	}
+
+	&-item img {
+		width: 20px;
+		height: 20px;
+	}
+}
+
+.burger-button {
+	display: none;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	right: 56px;
+	top: 52px;
+}
+
+.burger-icon {
+	width: 30px;
+	height: 3px;
+	background-color: white;
+	position: relative;
+	transition: transform 0.3s ease;
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		width: 30px;
+		height: 3px;
+		background-color: white;
+		left: 0;
+		transition:
+			top 0.3s ease,
+			transform 0.3s ease;
+	}
+
+	&::before {
+		top: -10px;
+	}
+
+	&::after {
+		top: 10px;
+	}
+}
+
+@include media-query('tablet') {
+	.burger-button {
+		display: block;
+	}
+
+	.navigation {
+		display: none;
+		position: absolute;
+		top: 70px;
+		right: 20px;
+		background-color: $black;
+		border-radius: 8px;
+		padding: 20px;
+		width: 200px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		flex-direction: column;
+		align-items: flex-start;
+
+		&.open {
+			display: flex;
+		}
+
+		&-item {
+			margin-bottom: 10px;
+		}
+	}
+}
