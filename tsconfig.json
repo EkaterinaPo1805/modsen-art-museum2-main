@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"baseUrl": "./src",
+		"paths": {
+			"@assets/*": ["assets/*"],
+			"@components/*": ["components/*"],
+			"@hooks/*": ["hooks/*"],
+			"@pages/*": ["pages/*"],
+			"@store/*": ["store/*"],
+			"@styles/*": ["styles/*"],
+			"@utils/*": ["utils/*"]
+		},
+		"target": "ES5",
+		"lib": ["dom", "es2015"],
+		"jsx": "react-jsx",
+		"moduleResolution": "node",
+		"strict": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"outDir": "./dist",
+		"allowJs": true,
+		"checkJs": true,
+		"module": "ESNext",
+		"resolveJsonModule": true,
+		"types": ["@testing-library/jest-dom", "node"]
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules"]
+}

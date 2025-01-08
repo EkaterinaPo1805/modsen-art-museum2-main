@@ -1,0 +1,45 @@
+@mixin font-style($font-family, $font-weight, $font-size, $line-height: 1.5) {
+	font-family: $font-family, sans-serif;
+	font-weight: $font-weight;
+	font-size: $font-size;
+	line-height: $line-height;
+}
+
+@mixin media-query($size) {
+	@if $size == 'desktop' {
+		@media (max-width: 1440px) {
+			@content;
+		}
+	} @else if $size == 'tablet' {
+		@media (max-width: 768px) {
+			@content;
+		}
+	}
+}
+
+@mixin form-padding($desktop, $tablet) {
+	@include media-query('desktop') {
+		margin: 0px $desktop;
+	}
+
+	@include media-query('tablet') {
+		margin: 0px $tablet;
+	}
+}
+
+@mixin navigation-item-style(
+	$font-family,
+	$font-weight,
+	$font-size,
+	$line-height
+) {
+	@include font-style($font-family, $font-weight, $font-size, $line-height);
+	color: white;
+	text-decoration: none;
+}
+
+@mixin flex-layout($direction: row, $align-items: center) {
+	display: flex;
+	flex-direction: $direction;
+	align-items: $align-items;
+}
