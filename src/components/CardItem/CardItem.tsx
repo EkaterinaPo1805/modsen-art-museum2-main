@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import FavoriteButton from '@components/FavoriteButton/FavoriteButton';
+import Loader from '@components/Loader';
 
 interface CardItemProps {
 	dataId: number;
@@ -39,11 +40,7 @@ const CardItem: React.FC<CardItemProps> = ({
 			aria-label={`Go to details of ${title}`}
 		>
 			<div className={`card ${variant}`}>
-				{loading && !error && (
-					<div className="image-loader">
-						<p>Loading...</p>
-					</div>
-				)}
+				{loading && !error && <Loader className='card'/>}
 
 				<div className="image-container">
 					{!error ? (

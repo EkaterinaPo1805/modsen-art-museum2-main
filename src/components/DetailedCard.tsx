@@ -5,6 +5,7 @@ import { AppDispatch, RootState } from '@store/index';
 import { fetchArtworkData } from '@store/actions/artworkActions';
 import CardItem from '@components/CardItem/CardItem';
 import Pagination from '@components/Pagination/Pagination';
+import Loader from './Loader';
 
 const DetailedCard: React.FC = () => {
 	const dispatch = useDispatch<AppDispatch>();
@@ -47,23 +48,26 @@ const DetailedCard: React.FC = () => {
 		}
 	};
 
-	if (loadingDetailed) return <div>Loading...</div>;
-	if (error) return <div>{error}</div>;
-
 	return (
 		<div className="favoritecard-container">
 			<div className="image-gallery">
-				{detailedData.map((item) => (
-					<CardItem
-						key={item.id}
-						dataId={item.id}
-						title={item.title}
-						artist={item.artist}
-						publicDomain={item.public_domain}
-						imageId={item.image_id}
-						variant="detailed"
-					/>
-				))}
+				{loadingDetailed ? (
+					<Loader />
+				) : error ? (
+					<div>{error}</div>
+				) : (
+					detailedData.map((item) => (
+						<CardItem
+							key={item.id}
+							dataId={item.id}
+							title={item.title}
+							artist={item.artist}
+							publicDomain={item.public_domain}
+							imageId={item.image_id}
+							variant="detailed"
+						/>
+					))
+				)}
 			</div>
 
 			<Pagination

@@ -5,6 +5,7 @@ import { AppDispatch, RootState } from '@store/index';
 import { fetchArtworkData } from '@store/actions/artworkActions';
 import CardItem from '@components/CardItem/CardItem';
 import { ArtworkData } from '@store/reducers/artworkReducers';
+import Loader from './Loader';
 
 const CompactCard: React.FC = () => {
 	const dispatch = useDispatch<AppDispatch>();
@@ -20,28 +21,26 @@ const CompactCard: React.FC = () => {
 		}
 	}, [dispatch, imagesPerPage, loadingCompact, compactData.length]);
 
-	if (loadingCompact) {
-		return <div>Loading...</div>;
-	}
-
-	if (error) {
-		return <div>{error}</div>;
-	}
-
 	return (
 		<div className="cardpcontainer">
 			<div className="works-gallery">
-				{compactData.map((item: ArtworkData) => (
-					<CardItem
-						key={item.id}
-						dataId={item.id}
-						title={item.title}
-						artist={item.artist}
-						publicDomain={item.public_domain}
-						imageId={item.image_id}
-						variant="compact"
-					/>
-				))}
+				{loadingCompact ? (
+					<Loader />
+				) : error ? (
+					<div>{error}</div>
+				) : (
+					compactData.map((item: ArtworkData) => (
+						<CardItem
+							key={item.id}
+							dataId={item.id}
+							title={item.title}
+							artist={item.artist}
+							publicDomain={item.public_domain}
+							imageId={item.image_id}
+							variant="compact"
+						/>
+					))
+				)}
 			</div>
 		</div>
 	);

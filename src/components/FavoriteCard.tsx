@@ -5,6 +5,7 @@ import { RootState, AppDispatch } from '@store/index';
 import { fetchArtworkDetail } from '@store/actions/artworkActions';
 import CardItem from '@components/CardItem/CardItem';
 import { ArtworkData } from '@store/reducers/artworkReducers';
+import Loader from './Loader';
 
 const FavoriteCard: React.FC = () => {
 	const dispatch = useDispatch<AppDispatch>();
@@ -48,7 +49,7 @@ const FavoriteCard: React.FC = () => {
 	return (
 		<div className="favoritecard-container">
 			{loading ? (
-				<div className="loader">Loading...</div>
+				<Loader />
 			) : artworks.length === 0 ? (
 				<p>No favorites available.</p>
 			) : (

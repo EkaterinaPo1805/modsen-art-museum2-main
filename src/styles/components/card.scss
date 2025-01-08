@@ -64,7 +64,7 @@
 	gap: 0;
 	padding: 0;
 	width: 387px;
-	height: auto;
+	height: 100%;
 	background-color: transparent;
 
 	@include media-query('desktop') {
@@ -234,25 +234,4 @@ button:active {
 	@include media-query('desktop') {
 		width: 100%;
 	}
-}
-
-.card.detailed .image-loader {
-	height: 514px;
-}
-
-.image-loader {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: rgba(255, 255, 255, 0.7);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	z-index: 10;
-}
-
-.favoritecard-container .loader {
-	align-self: center;
 }

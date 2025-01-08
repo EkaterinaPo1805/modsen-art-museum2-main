@@ -11,6 +11,7 @@ import { AppDispatch } from '@store/index';
 import CardItem from '@components/CardItem/CardItem';
 import SortDropdown from '@components/SortDropdown/SortDropdown';
 import { ArtworkData } from '@store/reducers/artworkReducers';
+import Loader from './Loader';
 
 const MIN_LENGTH = 3;
 
@@ -108,7 +109,7 @@ const SearchBar: React.FC = () => {
 						setSortCriteria={setSortCriteria}
 					/>
 					{loading ? (
-						<div className="loader">Loading...</div>
+						<Loader />
 					) : sortedArtworks.length > 0 ? (
 						<div className="search-results">
 							{sortedArtworks.map((item) => (
