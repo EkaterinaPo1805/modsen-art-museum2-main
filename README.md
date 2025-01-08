@@ -1,5 +1,7 @@
 # Tестовое задание Modsen Art Museum
 
+## Deploy на Vercel: https://modsen-art-museum2-main.vercel.app/
+
 ## Содержание
 
 - [Техническое задание](#Техническое-задание)
