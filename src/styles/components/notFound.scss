@@ -1,0 +1,16 @@
+.link {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: $lightOrange;
+    color: $light;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .link:hover {
+    background-color: $orange;
+  }
+  
