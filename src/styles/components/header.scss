@@ -75,6 +75,7 @@ header {
 	position: absolute;
 	right: 56px;
 	top: 52px;
+	z-index: 100;
 }
 
 .burger-icon {
@@ -123,6 +124,7 @@ header {
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 		flex-direction: column;
 		align-items: flex-start;
+		z-index: 99;
 
 		&.open {
 			display: flex;
