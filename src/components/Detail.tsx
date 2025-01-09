@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import { AppDispatch, RootState } from '@store/index';
-import { fetchArtworkDetail } from '@store/actions/artworkActions';
+import { fetchArtworkDetail } from '@store/actions/fetchArtworkDetailAction';
 import FavoriteButton from '@components/FavoriteButton/FavoriteButton';
 import Loader from './Loader';
 
@@ -12,7 +12,7 @@ const Detail: React.FC = () => {
 	const dispatch = useDispatch<AppDispatch>();
 
 	const { detailedDataById, loadingDetailById, error } = useSelector(
-		(state: RootState) => state.artwork
+		(state: RootState) => state.artworkDetail
 	);
 
 	useEffect(() => {

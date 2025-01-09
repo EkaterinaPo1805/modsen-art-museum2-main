@@ -6,11 +6,11 @@ import * as yup from 'yup';
 
 import searchIcon from '@assets/search.svg';
 import useDebounce from '@hooks/useDebounce';
-import { searchArtworkData } from '@store/actions/artworkActions';
+import { searchArtworkData } from '@store/actions/searchArtworkAction';
 import { AppDispatch } from '@store/index';
 import CardItem from '@components/CardItem/CardItem';
 import SortDropdown from '@components/SortDropdown/SortDropdown';
-import { ArtworkData } from '@store/reducers/artworkReducers';
+import { ArtworkData } from '@store/reducers/searchArtworkReducer';
 import Loader from './Loader';
 
 const MIN_LENGTH = 3;

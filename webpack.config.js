@@ -14,6 +14,8 @@ module.exports = {
       '@utils': path.resolve(__dirname, 'src/utils/'),
       '@store': path.resolve(__dirname, 'src/store/'),
       '@styles': path.resolve(__dirname, 'src/styles/'),
+      '@api': path.resolve(__dirname, 'src/api/'),
+      '@types': path.resolve(__dirname, 'src/types/'),
     },
     extensions: ['.tsx', '.ts', '.js', '.jsx', '.json', '.scss'],
   },

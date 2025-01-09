@@ -1,12 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
-
-import artReducer from '@store/reducers/artworkReducers';
+import artworkReducer from '@store/reducers/artworkReducer';
+import artworkDetailReducer from '@store/reducers/artworkDetailReducer';
 import favoritesReducer from '@store/reducers/favoritesReducer';
+import searchArtworkReducer from '@store/reducers/searchArtworkReducer';
 
 const store = configureStore({
 	reducer: {
-		artwork: artReducer,
+		artwork: artworkReducer,
+		artworkDetail: artworkDetailReducer,
 		favorites: favoritesReducer,
+		searchArtwork: searchArtworkReducer,
 	},
 });
 

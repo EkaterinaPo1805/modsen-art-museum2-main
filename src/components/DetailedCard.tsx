@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { AppDispatch, RootState } from '@store/index';
-import { fetchArtworkData } from '@store/actions/artworkActions';
+import { fetchArtworkData } from '@store/actions/fetchArtworkAction';
 import CardItem from '@components/CardItem/CardItem';
 import Pagination from '@components/Pagination/Pagination';
 import Loader from './Loader';

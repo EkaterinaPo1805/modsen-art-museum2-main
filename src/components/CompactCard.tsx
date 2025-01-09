@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { AppDispatch, RootState } from '@store/index';
-import { fetchArtworkData } from '@store/actions/artworkActions';
+import { fetchArtworkData } from '@store/actions/fetchArtworkAction';
 import CardItem from '@components/CardItem/CardItem';
-import { ArtworkData } from '@store/reducers/artworkReducers';
+import { ArtworkData } from '@store/reducers/artworkReducer';
 import Loader from './Loader';
 
 const CompactCard: React.FC = () => {

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { RootState, AppDispatch } from '@store/index';
-import { addFavorite, removeFavorite } from '@store/actions/favoritesActions';
+import { addFavorite, removeFavorite } from '@store/actions/fetchFavoritesAction';
 
 interface FavoriteButtonProps {
 	id: number;

@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { RootState, AppDispatch } from '@store/index';
-import { fetchArtworkDetail } from '@store/actions/artworkActions';
+import { fetchArtworkDetail } from '@store/actions/fetchArtworkDetailAction';
 import CardItem from '@components/CardItem/CardItem';
-import { ArtworkData } from '@store/reducers/artworkReducers';
+import { ArtworkData } from '@store/reducers/artworkReducer';
 import Loader from './Loader';
 
 const FavoriteCard: React.FC = () => {
