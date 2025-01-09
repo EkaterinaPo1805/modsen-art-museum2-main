@@ -1,3 +1,5 @@
+@use '@styles/abstracts/variables' as *;
+@use '@styles/abstracts/mixins' as *;
 .art-container {
 	display: flex;
 	gap: 60px;

@@ -1,3 +1,5 @@
+@use '@styles/abstracts/mixins' as *;
+
 .logo-text {
 	@include media-query('tablet') {
 		display: none;

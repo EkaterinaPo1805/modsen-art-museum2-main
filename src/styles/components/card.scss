@@ -1,3 +1,6 @@
+@use '@styles/abstracts/variables' as *;
+@use '@styles/abstracts/mixins' as *;
+
 .art-and-artist {
 	@include flex-layout(column, flex-start);
 	justify-content: space-between;
@@ -14,7 +17,6 @@
 }
 
 .card.detailed .form {
-	@include form-padding(24px, 16px);
 	gap: 8px;
 	padding: 32px 24px;
 	width: 310px;
@@ -23,6 +25,7 @@
 	position: relative;
 	bottom: 62px;
 	font-family: 'Lexend Deca';
+	@include form-padding(24px, 16px);
 
 	@include media-query('desktop') {
 		width: 80%;

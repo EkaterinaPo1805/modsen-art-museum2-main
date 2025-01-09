@@ -21,6 +21,7 @@ export default defineConfig([
 		},
 		rules: {
 			'prettier/prettier': ['error'],
+			"import/no-unresolved": "error",
 		},
 		settings: {
 			react: {

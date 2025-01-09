@@ -1,3 +1,6 @@
+@use '@styles/abstracts/variables' as *;
+@use '@styles/abstracts/mixins' as *;
+
 .sort-dropdown {
 	position: relative;
 	width: auto;
