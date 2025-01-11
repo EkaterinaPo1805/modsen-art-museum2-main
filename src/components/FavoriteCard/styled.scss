@@ -28,6 +28,6 @@
 	}
 
 	@include media-query('mobile') {
-		width: auto;
+		width: 100%;
 	}
 }
