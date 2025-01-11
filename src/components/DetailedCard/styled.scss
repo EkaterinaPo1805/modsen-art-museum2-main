@@ -5,7 +5,6 @@
 	@include flex-layout(column, center);
 	gap: 80px;
 	width: auto;
-	@include form-padding(margin);
 
 	@include media-query('tablet') {
 		gap: 60px;
