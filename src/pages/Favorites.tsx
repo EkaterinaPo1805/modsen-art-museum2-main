@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 
-import FavoriteCard from '@components/FavoriteCard';
+import FavoriteCard from '@components/FavoriteCard/index';
 
 import Header from '@components/Header/index';
 import Footer from '@components/Footer/index';
