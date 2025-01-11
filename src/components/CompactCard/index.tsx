@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import { AppDispatch, RootState } from '@store/index';
-import CardItem from '@components/CardItem';
+import CardItem from '@components/CardItem/index';
 import { ArtworkData } from '@appTypes/dataFetch';
 import Loader from '@components/Loader/index';
 import useFetchArtwork from '@hooks/useFetchArtwork';

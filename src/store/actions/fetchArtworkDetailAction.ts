@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+
 import { fetchArtworkDetailApi } from '@api/fetchArtworkDetail';
 import { ArtworkData } from '@appTypes/dataFetch';
 import { UNKNOWN_ERROR } from '@constants/errorMessages';

@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from '@pages/Home';
 import Favorites from '@pages/Favorites';
 import ArtDetail from '@pages/ArtDetail';
-import ErrorBoundary from '@components/ErrorBoundary';
+import ErrorBoundary from '@components/ErrorBoundary/index';
 import NotFound from '@pages/NotFound';
 import { ROUTES } from '@constants/routes';
 

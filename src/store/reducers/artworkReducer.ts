@@ -1,7 +1,7 @@
-import { NO_RESULTS_FOUND_ERROR } from '@constants/errorMessages';
-import { CARD_COMPACT, CARD_DETAILED } from '@constants/strings';
 import { createSlice } from '@reduxjs/toolkit';
 
+import { NO_RESULTS_FOUND_ERROR } from '@constants/errorMessages';
+import { CARD_COMPACT, CARD_DETAILED } from '@constants/strings';
 import { fetchArtworkData } from '@store/actions/fetchArtworkAction';
 import { ArtworkData } from '@appTypes/dataFetch';
 

@@ -1,3 +1,4 @@
+import { FetchItem } from '@appTypes/FetchItem';
 import {
 	FETCH_ARTWORK_ERROR,
 	NO_RESULTS_FOUND_ERROR,
@@ -8,14 +9,6 @@ import {
 	UNPUBLIC_DOMAIN,
 } from '@constants/strings';
 import { API_URL } from '@constants/urls';
-
-interface ImageItem {
-	id: string;
-	title?: string;
-	artist_title?: string;
-	is_public_domain: boolean;
-	image_id: string;
-}
 
 export const searchArtworkApi = async (searchQuery: string) => {
 	const response = await fetch(
@@ -32,7 +25,7 @@ export const searchArtworkApi = async (searchQuery: string) => {
 		throw new Error(NO_RESULTS_FOUND_ERROR);
 	}
 
-	return data.data.map((item: ImageItem) => ({
+	return data.data.map((item: FetchItem) => ({
 		id: item.id,
 		title: item.title || UNKNOWN_TEXT,
 		artist: item.artist_title || UNKNOWN_TEXT,

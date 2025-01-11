@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import { CardItemProps } from '@appTypes/CardItem';
 import Loader from '@components/Loader/index';
-import FavoriteButton from '@components/FavoriteButton';
+import FavoriteButton from '@components/FavoriteButton/index';
 import { createImageUrl } from '@utils/createImageUrl';
 import useFetchImage from '@hooks/useFetchImage';
 import { CARD_COMPACT, NO_IMAGE_TEXT } from '@constants/strings';

@@ -1,5 +1,6 @@
-import { SESSION_STORAGE_ERROR } from '@constants/errorMessages';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+import { SESSION_STORAGE_ERROR } from '@constants/errorMessages';
 
 export interface FavoritesState {
 	items: number[];

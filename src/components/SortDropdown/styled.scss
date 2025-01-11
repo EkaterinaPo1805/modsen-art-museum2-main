@@ -5,13 +5,7 @@
 	position: relative;
 	width: auto;
 
-	@include media-query('tablet') {
-		padding: 0px 50px;
-	}
-
-	@include media-query('mobile') {
-		padding: 0px 16px;
-	}
+	@include form-padding(padding);
 
 	select {
 		@include font-style($font-primary, $font-weight);
@@ -59,14 +53,7 @@
 		pointer-events: none;
 		font-size: 12px;
 		color: $black;
-
-		@include media-query('tablet') {
-			padding: 0px 50px;
-		}
-
-		@include media-query('mobile') {
-			padding: 0px 16px;
-		}
+		@include form-padding(padding);
 	}
 
 	select::-ms-expand {

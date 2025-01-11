@@ -1,5 +1,6 @@
-import { SORT_CRITERIA } from '@constants/strings';
 import React, { useCallback } from 'react';
+
+import { SORT_CRITERIA } from '@constants/strings';
 
 import '@components/SortDropdown/styled';
 

@@ -27,8 +27,8 @@ const mockArtworkDetailState = {
 };
 
 const mockSearchArtworkState = {
-	searchResults: [], // Обновлено
-	loadingSearch: false, // Обновлено
+	searchResults: [],
+	loadingSearch: false,
 	error: null,
 };
 

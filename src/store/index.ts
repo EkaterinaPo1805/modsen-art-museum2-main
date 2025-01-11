@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+
 import artworkReducer from '@store/reducers/artworkReducer';
 import artworkDetailReducer from '@store/reducers/artworkDetailReducer';
 import favoritesReducer from '@store/reducers/favoritesReducer';

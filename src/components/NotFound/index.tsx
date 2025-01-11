@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import '@components/NotFound/styled';
 import { ROUTES } from "@constants/routes";
+
+import '@components/NotFound/styled';
 
 const NotFound: React.FC = () => {
 	return (

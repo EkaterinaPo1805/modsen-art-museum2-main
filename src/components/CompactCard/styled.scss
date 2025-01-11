@@ -6,7 +6,7 @@
 	flex-wrap: wrap;
 	gap: 16px;
 	width: 1280px;
-	@include form-padding($spacing-tablet, $spacing-mobile);
+	@include form-padding(margin);
 
 	@include media-query('tablet') {
 		width: auto;

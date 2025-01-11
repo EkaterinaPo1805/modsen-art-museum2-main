@@ -21,11 +21,6 @@ header {
 	}
 }
 
-.navigation {
-	@include flex-layout(row, center);
-	gap: $spacing-xs;
-}
-
 @include media-query('mobile') {
 	.navigation {
 		display: none;

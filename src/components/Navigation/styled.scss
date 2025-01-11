@@ -2,8 +2,12 @@
 @use '@styles/mixins' as *;
 
 .paths {
-	@include flex-layout(column, flex-start);
-	gap: $spacing-xs;
+	@include flex-layout(row, flex-end);
+    gap: $spacing-xs;
+    
+    @include media-query('mobile') {
+		@include flex-layout(column, flex-start);
+	}
 }
 
 .navigation-item {

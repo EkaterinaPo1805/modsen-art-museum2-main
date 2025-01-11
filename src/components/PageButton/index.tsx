@@ -1,6 +1,8 @@
 import React from 'react';
+
 import ArrowIcon from '@components/ArrowIcon/index';
 import { ARROW_LEFT, ARROW_RIGHT } from '@constants/strings';
+
 import '@components/PageButton/styled';
 
 export interface PageButtonProps {

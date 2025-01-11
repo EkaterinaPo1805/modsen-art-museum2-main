@@ -1,3 +1,5 @@
+@use '@styles/variables' as *;
+
 @mixin spacing($property, $top: 0, $right: 0, $bottom: 0, $left: 0) {
 	#{$property}: $top $right $bottom $left;
 }
@@ -24,13 +26,13 @@
 	}
 }
 
-@mixin form-padding($tablet, $mobile) {
+@mixin form-padding($property, $tablet: $spacing-tablet, $mobile: $spacing-mobile) {
 	@include media-query('tablet') {
-		margin: 0px $tablet;
+		#{$property}: 0px $tablet;
 	}
 
 	@include media-query('mobile') {
-		margin: 0px $mobile;
+		#{$property}: 0px $mobile;
 	}
 }
 

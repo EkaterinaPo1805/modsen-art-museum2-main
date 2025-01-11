@@ -15,6 +15,7 @@ import Loader from '@components/Loader/index';
 import { MIN_SEARCH_LENGTH } from '@constants/numbers';
 import { SEARCH_PLACEHOLDER } from '@constants/strings';
 import { NO_RESULTS_FOUND_ERROR } from '@constants/errorMessages';
+
 import '@components/SearchBar/styled';
 
 

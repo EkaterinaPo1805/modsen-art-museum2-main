@@ -4,10 +4,13 @@ import { useParams } from 'react-router-dom';
 
 import { AppDispatch, RootState } from '@store/index';
 import { fetchArtworkDetail } from '@store/actions/fetchArtworkDetailAction';
-import FavoriteButton from '@components/FavoriteButton';
+import FavoriteButton from '@components/FavoriteButton/index';
 import Loader from '@components/Loader/index';
 import { createImageUrl } from '@utils/createImageUrl';
+
 import '@components/Detail/styled';
+import { NO_IMAGE_TEXT } from '@constants/strings';
+import useFetchImage from '@hooks/useFetchImage';
 
 const Detail: React.FC = () => {
 	const { dataId } = useParams<{ dataId: string }>();
@@ -16,6 +19,13 @@ const Detail: React.FC = () => {
 	const { detailedDataById, loadingDetailById, error } = useSelector(
 		(state: RootState) => state.artworkDetail
 	);
+
+	const {
+		loading: imageLoading,
+		error: imageError,
+		handleImageLoad,
+		handleImageError,
+	} = useFetchImage();
 
 	useEffect(() => {
 		if (dataId) {
@@ -41,7 +51,19 @@ const Detail: React.FC = () => {
 				<>
 					<div className="art-detail">
 						<div className="image-detail">
-							<img src={createImageUrl(art.image_id)} alt={art.title} />
+							{imageLoading && !imageError && <Loader />}
+							{!imageError ? (
+								<img
+									src={createImageUrl(art.image_id)}
+									alt={art.title}
+									onLoad={handleImageLoad}
+									onError={handleImageError}
+								/>
+							) : (
+								<div className="image-error">
+									<p>{NO_IMAGE_TEXT}</p>
+								</div>
+							)}
 							<div className="favorite-button">
 								<FavoriteButton id={art.id} />
 							</div>

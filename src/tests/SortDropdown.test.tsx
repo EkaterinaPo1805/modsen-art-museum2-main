@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import SortDropdown from '../components/SortDropdown';
+import SortDropdown from '@components/SortDropdown';
 
 describe('SortDropdown component', () => {
 	test('renders SortDropdown with options', () => {

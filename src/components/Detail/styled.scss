@@ -192,3 +192,15 @@
 .back-button:hover {
 	background-color: $orange;
 }
+
+.image-error {
+	@include flex-layout(row, center);
+	justify-content: center;
+	@include size(497px, 570px);
+	background-color: $lightOrange;
+	color: $light;
+
+	@include media-query('tablet') {
+    width: auto;
+	}
+}

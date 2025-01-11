@@ -63,7 +63,7 @@
 	background-color: $light;
 	position: relative;
 	bottom: 62px;
-	@include form-padding($spacing-sm, $spacing-xs);
+	@include form-padding(margin);
 
 	@include media-query('tablet') {
 		width: 80%;
@@ -147,8 +147,13 @@ figure {
 }
 
 .card.detailed .image-error {
-	height: 444px;
-	background-color: $lightOrange;
-	color: $light;
-	text-align: center;
+    @include size(auto, 444px);
+}
+
+.card .image-error {
+    @include flex-layout(row, center);
+    @include size(80px, 80px);
+	justify-content: center;
+    background-color: $lightOrange;
+    color: $light;
 }

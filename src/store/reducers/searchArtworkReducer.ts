@@ -1,8 +1,8 @@
-import { NO_RESULTS_FOUND_ERROR } from '@constants/errorMessages';
 import { createSlice } from '@reduxjs/toolkit';
 
 import { searchArtworkData } from '@store/actions/searchArtworkAction';
 import { ArtworkData } from '@appTypes/dataFetch';
+import { NO_RESULTS_FOUND_ERROR } from '@constants/errorMessages';
 interface SearchArtworkState {
 	searchResults: ArtworkData[];
 	loadingSearch: boolean;

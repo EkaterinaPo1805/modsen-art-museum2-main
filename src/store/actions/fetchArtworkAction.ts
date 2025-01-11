@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+
 import { fetchArtworkApi } from '@api/fetchArtwork';
 import { ArtworkData } from '@appTypes/dataFetch';
 import { CARD_COMPACT, CARD_DETAILED } from '@constants/strings';

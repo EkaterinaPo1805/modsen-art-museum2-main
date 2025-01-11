@@ -1,9 +1,11 @@
+import React from 'react';
+
 import { LOGO, STROKE_WIDTH } from '@constants/svg';
 import { LOGO_COLOR_FOOTER, LOGO_COLOR_HEADER } from '@constants/strings';
-import React from 'react';
 import { Link } from 'react-router-dom';
-import '@components/Logo/styled';
 import { ROUTES } from '@constants/routes';
+
+import '@components/Logo/styled';
 
 type LogoProps = {
 	color: typeof LOGO_COLOR_FOOTER | typeof LOGO_COLOR_HEADER;

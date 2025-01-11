@@ -1,3 +1,4 @@
+import { FetchItem } from '@appTypes/FetchItem';
 import { FETCH_ARTWORK_ERROR } from '@constants/errorMessages';
 import {
 	PUBLIC_DOMAIN,
@@ -5,14 +6,6 @@ import {
 	UNPUBLIC_DOMAIN,
 } from '@constants/strings';
 import { API_URL } from '@constants/urls';
-
-interface ImageItem {
-	id: string;
-	title?: string;
-	artist_title?: string;
-	is_public_domain: boolean;
-	image_id: string;
-}
 
 export const fetchArtworkApi = async (page: number, imagesPerPage: number) => {
 	const response = await fetch(
@@ -26,7 +19,7 @@ export const fetchArtworkApi = async (page: number, imagesPerPage: number) => {
 	const data = await response.json();
 
 	return {
-		data: data.data.map((item: ImageItem) => ({
+		data: data.data.map((item: FetchItem) => ({
 			id: item.id,
 			title: item.title || UNKNOWN_TEXT,
 			artist: item.artist_title || UNKNOWN_TEXT,

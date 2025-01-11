@@ -7,12 +7,12 @@
 	justify-content: space-between;
 	padding: $spacing-xs;
 	border-radius: 16px;
-	background-color: #3939390d;;
+	background-color: #3939390d;
 	width: auto;
-	@include form-padding($spacing-tablet, $spacing-mobile);
+	@include form-padding(margin);
 
 	&.error {
-		background-color: #ff000080;
+		background-color: #ffc0c080;
 	}
 }
 
@@ -29,7 +29,7 @@
 }
 
 .search-icon {
-	@include size(32px, 100%)
+	@include size(32px, 100%);
 }
 
 .error-message {
@@ -43,14 +43,10 @@
 	color: red;
 	margin-top: 8px;
 	margin-left: 16px;
+	@include form-padding(padding);
 
 	@include media-query('tablet') {
 		width: auto;
-		padding: 0px 50px;
-	}
-
-	@include media-query('mobile') {
-		padding: 0px 16px;
 	}
 }
 
@@ -68,15 +64,10 @@
 	gap: $spacing-xs;
 	width: 1280px;
 	align-self: center;
-
+	@include form-padding(padding);
 
 	@include media-query('tablet') {
 		align-self: auto;
 		width: auto;
-		padding: 0px 50px;
-	}
-
-	@include media-query('mobile') {
-		padding: 0px 16px;
 	}
 }
