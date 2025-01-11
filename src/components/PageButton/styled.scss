@@ -1,0 +1,16 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.page-btn {
+	font-weight: 300;
+    font-size: $font-size-h4;
+    line-height: 24px;
+	@include size(30px, 30px);
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.page-btn.active {
+	background-color: $orange;
+	color: $light;
+}

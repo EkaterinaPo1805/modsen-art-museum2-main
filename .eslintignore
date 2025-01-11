@@ -1,3 +1,6 @@
-dist/
-build/
 node_modules/
+build/
+dist/
+*.d.ts
+*.config.js
+public/

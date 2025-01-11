@@ -1,0 +1,24 @@
+{
+	"presets": [
+		["@babel/preset-env", { "targets": { "esmodules": true } }],
+		["@babel/preset-react", { "runtime": "automatic" }],
+		"@babel/preset-typescript"
+	],
+	"plugins": [
+		[
+			"module-resolver",
+			{
+				"root": ["./src"],
+				"alias": {
+					"@components": "./components",
+					"@assets": "./assets",
+					"@hooks": "./hooks",
+					"@pages": "./pages",
+					"@store": "./store",
+					"@styles": "./styles",
+					"@utils": "./utils"
+				}
+			}
+		]
+	]
+}

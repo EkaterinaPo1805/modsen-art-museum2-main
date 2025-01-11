@@ -1,0 +1,33 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.pagination {
+	@include flex-layout(row, flex-end);
+    justify-content: flex-end;
+	gap: $font-size-h6;
+	align-self: flex-end;
+
+	@include media-query('desktop') {
+		margin-right: 50px;
+	}
+
+	@include media-query('tablet') {
+		align-self: center;
+		margin-right: 0px;
+	}
+}
+
+.page-list {
+    @include flex-layout(row, flex-end);
+    gap: 14px;
+}
+
+button:active {
+	fill: $orange;
+}
+
+ul, li {
+    list-style: none; 
+	@include spacing(padding, 0);
+	@include spacing(margin, 0);
+}

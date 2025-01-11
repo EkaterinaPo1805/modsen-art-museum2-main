@@ -8,7 +8,10 @@
 			"@pages/*": ["pages/*"],
 			"@store/*": ["store/*"],
 			"@styles/*": ["styles/*"],
-			"@utils/*": ["utils/*"]
+			"@utils/*": ["utils/*"],
+			"@api/*": ["api/*"],
+			"@appTypes/*": ["types/*"],
+			"@constants/*": ["constants/*"]
 		},
 		"target": "ES5",
 		"lib": ["dom", "es2015"],

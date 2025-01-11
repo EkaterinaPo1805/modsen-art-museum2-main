@@ -1,0 +1,54 @@
+{
+	"overrides": [
+	  {
+		"files": ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+		"languageOptions": {
+		  "globals": {
+			"browser": true
+		  }
+		},
+		"plugins": ["react", "prettier", "import"],
+		"rules": {
+		  "prettier/prettier": ["error"],
+		  "import/no-unresolved": "error"
+		},
+		"settings": {
+		  "react": {
+			"version": "detect"
+		  },
+		  "import/resolver": {
+			"node": {
+			  "extensions": [".js", ".jsx", ".ts", ".tsx"]
+			},
+			"typescript": {
+			  "project": "./tsconfig.json"
+			}
+		  }
+		}
+	  },
+	  {
+		"files": ["**/dist/**/*"],
+		"ignores": ["dist/"]
+	  },
+	  {
+		"files": ["tests/**/*"],
+		"plugins": ["jest"],
+		"env": {
+		  "jest/globals": true
+		}
+	  },
+	  {
+		"extends": [
+		  "plugin:@eslint/js/recommended",
+		  "plugin:typescript-eslint/recommended",
+		  "plugin:prettier/recommended",
+		  "plugin:react/recommended"
+		],
+		"rules": {
+		  "prettier/prettier": ["error"],
+		  "react/react-in-jsx-scope": "off"
+		}
+	  }
+	]
+  }
+  

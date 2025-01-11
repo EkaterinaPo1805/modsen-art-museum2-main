@@ -1,0 +1,43 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.burger-button {
+	display: none;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	right: 56px;
+	top: 52px;
+	z-index: 100;
+
+	@include media-query('mobile') {
+		display: block;
+	}
+}
+
+.burger-icon {
+	@include size(30px, 3px);
+	position: relative;
+	transition: transform 0.3s ease;
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		@include size(30px, 3px);
+		background-color: $light;
+		left: 0;
+		transition:
+			top 0.3s ease,
+			transform 0.3s ease;
+	}
+
+	&::before {
+		top: -10px;
+	}
+
+	&::after {
+		top: 10px;
+	}
+}
