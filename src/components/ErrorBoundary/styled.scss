@@ -1,0 +1,21 @@
+@use '@styles/mixins' as *;
+@use '@styles/variables' as *;
+
+.error-boundary {
+	padding: 20px;
+	text-align: center;
+	background-color: #f8d7da;
+	border: 1px solid #f5c6cb;
+	color: red;
+	border-radius: 4px;
+	font-size: $font-size-h5;
+}
+
+.error-boundary h2 {
+	margin-bottom: 10px;
+	font-size: $font-size-h3;
+}
+
+.error-boundary p {
+	font-size: $font-size-h3;
+}

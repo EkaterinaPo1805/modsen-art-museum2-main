@@ -1,0 +1,18 @@
+@use '@styles/mixins' as *;
+@use '@styles/variables' as *;
+
+.cardcontainer .works-gallery {
+	@include flex-layout(row, center);
+	flex-wrap: wrap;
+	gap: 16px;
+	width: 1280px;
+	@include form-padding(margin);
+
+	@include media-query('tablet') {
+		width: auto;
+	}
+
+	@include media-query('mobile') {
+		width: auto;
+	}
+}

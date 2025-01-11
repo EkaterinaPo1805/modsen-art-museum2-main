@@ -1,5 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+import { SESSION_STORAGE_ERROR } from '@constants/errorMessages';
+
 export interface FavoritesState {
 	items: number[];
 }
@@ -12,7 +14,7 @@ let initialFavorites: number[] = [];
 try {
 	initialFavorites = storedFavorites ? JSON.parse(storedFavorites) : [];
 } catch (error) {
-	console.error('Failed to parse favorites from sessionStorage', error);
+	console.error(SESSION_STORAGE_ERROR, error);
 }
 
 const initialState: FavoritesState = {

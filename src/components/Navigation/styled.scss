@@ -1,0 +1,31 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.paths {
+	@include flex-layout(row, flex-end);
+    gap: $spacing-xs;
+    
+    @include media-query('mobile') {
+		@include flex-layout(column, flex-start);
+	}
+}
+
+.navigation-item {
+	@include flex-layout(row, center);
+	gap: 4px;
+	@include font-style($font-secondary, $font-weight);
+	font-size: $font-size-h4;
+	line-height: 22px;
+	color: $light;
+	text-decoration: none;
+	width: auto;
+	@include spacing(margin, 0 !important);
+
+	@include media-query('mobile') {
+		width: 100%;
+	}
+}
+
+.navigation-item img {
+	@include size(20px, 20px);
+}
