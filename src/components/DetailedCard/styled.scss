@@ -1,0 +1,34 @@
+@use '@styles/mixins' as *;
+@use '@styles/variables' as *;
+
+.detailedcard-container {
+	@include flex-layout(column, center);
+	gap: 80px;
+	width: auto;
+	@include form-padding($spacing-tablet, $spacing-mobile);
+
+	@include media-query('tablet') {
+		gap: 60px;
+	}
+
+	@include media-query('mobile') {
+		width: auto;
+	}
+}
+
+.image-gallery {
+	display: flex;
+	justify-content: space-between;
+	width: 1280px;
+	height: 514px;
+	@include form-padding($spacing-tablet, $spacing-mobile);
+
+	@include media-query('tablet') {
+		gap: $spacing-lg;
+		width: auto;
+	}
+
+	@include media-query('mobile') {
+		width: auto;
+	}
+}

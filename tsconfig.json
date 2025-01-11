@@ -10,7 +10,8 @@
 			"@styles/*": ["styles/*"],
 			"@utils/*": ["utils/*"],
 			"@api/*": ["api/*"],
-			"@types/*": ["types/*"]
+			"@appTypes/*": ["types/*"],
+			"@constants/*": ["constants/*"]
 		},
 		"target": "ES5",
 		"lib": ["dom", "es2015"],

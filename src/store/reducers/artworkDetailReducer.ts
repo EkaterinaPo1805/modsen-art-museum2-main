@@ -1,20 +1,8 @@
+import { NO_RESULTS_FOUND_ERROR } from '@constants/errorMessages';
 import { createSlice } from '@reduxjs/toolkit';
+
 import { fetchArtworkDetail } from '@store/actions/fetchArtworkDetailAction';
-
-export interface ArtworkData {
-	id: number;
-	title: string;
-	artist: string;
-	public_domain: string;
-	artist_nationality: string;
-	dimensions: string;
-	credit_line: string;
-	repository: string;
-	date: string;
-	image_id: string;
-	searchQuery?: string;
-}
-
+import { ArtworkData } from '@appTypes/dataFetch';
 interface ArtworkDataState {
 	detailedDataById: ArtworkData | null;
 	loadingDetailById: boolean;
@@ -46,7 +34,7 @@ const artworkDetailSlice = createSlice({
 				state.error =
 					action.error instanceof Error
 						? action.error.message
-						: 'No artwork detail';
+						: NO_RESULTS_FOUND_ERROR;
 			});
 	},
 });

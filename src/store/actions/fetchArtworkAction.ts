@@ -1,15 +1,20 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { fetchArtworkApi } from '@api/fetchArtwork';
-import { ArtworkData } from '@store/reducers/artworkReducer';
-
+import { ArtworkData } from '@appTypes/dataFetch';
+import { CARD_COMPACT, CARD_DETAILED } from '@constants/strings';
+import { UNKNOWN_ERROR } from '@constants/errorMessages';
 
 export const fetchArtworkData = createAsyncThunk<
 	{
 		imageData: ArtworkData[];
 		totalPages: number;
-		type: 'compact' | 'detailed';
+		type: typeof CARD_COMPACT | typeof CARD_DETAILED;
 	},
-	{ page: number; imagesPerPage: number; type: 'compact' | 'detailed' },
+	{
+		page: number;
+		imagesPerPage: number;
+		type: typeof CARD_COMPACT | typeof CARD_DETAILED;
+	},
 	{ rejectValue: string }
 >(
 	'artwork/fetchArtworkData',
@@ -24,7 +29,7 @@ export const fetchArtworkData = createAsyncThunk<
 			if (error instanceof Error) {
 				return rejectWithValue(error.message);
 			}
-			return rejectWithValue('An unknown error occurred');
+			return rejectWithValue(UNKNOWN_ERROR);
 		}
 	}
 );

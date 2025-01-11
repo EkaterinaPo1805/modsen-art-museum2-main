@@ -1,0 +1,194 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.art-container {
+	@include flex-layout(column, center);
+	gap: 60px;
+	align-self: center;
+	width: 1280px;
+
+	@include media-query('tablet') {
+		gap: 40px;
+		width: 668px;
+	}
+
+	@include media-query('mobile') {
+		width: 328px;
+	}
+}
+
+.art-detail {
+	@include flex-layout(row, stretch);
+	gap: 80px;
+	justify-content: center;
+	width: 100%;
+
+	@include media-query('tablet') {
+		flex-direction: column-reverse;
+		align-items: center;
+		gap: 40px;
+	}
+}
+
+.art-detail .container {
+	@include flex-layout(column, stretch);
+	justify-content: space-between;
+	width: 100%;
+
+	@include media-query('tablet') {
+		gap: $spacing-sm;
+		text-align: center;
+	}
+
+	@include media-query('mobile') {
+		gap: $spacing-sm;
+	}
+}
+
+.favorite-button {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	z-index: 1;
+}
+
+.image-detail {
+	position: relative;
+
+	@include media-query('tablet') {
+		width: 100%;
+	}
+}
+
+.image-detail img {
+	@include size(497px, 570px);
+	object-fit: cover;
+
+	@include media-query('tablet') {
+		width: 100%;
+	}
+}
+
+.artist-and-date .artist {
+	font-size: 2$font-size-h3;
+	color: $lightOrange;
+	line-height: 20px;
+
+	@include media-query('tablet') {
+		font-size: $font-size-h4;
+	}
+
+	@include media-query('mobile') {
+		font-size: $font-size-h5;
+	}
+}
+
+.art-and-artist-and-date .art {
+	font-size: $font-size-h2;
+	line-height: 40px;
+
+	@include media-query('tablet') {
+		font-size: $font-size-h3;
+	}
+
+	@include media-query('mobile') {
+		font-size: $font-size-h3;
+	}
+}
+
+.date {
+	font-weight: 700;
+	font-size: $font-size-h5;
+	line-height: 19px;
+
+	@include media-query('tablet') {
+		font-size: $font-size-h6;
+	}
+
+	@include media-query('mobile') {
+		font-size: $font-size-h7;
+	}
+}
+
+.artist-and-date {
+	@include flex-layout(column, flex-start);
+	gap: $spacing-xs;
+
+	@include media-query('tablet') {
+		gap: 12px;
+		align-items: center;
+	}
+
+	@include media-query('mobile') {
+		gap: 8px;
+	}
+}
+
+.art-and-artist-and-date {
+	@include flex-layout(column, flex-start);
+	gap: $spacing-md;
+
+	@include media-query('tablet') {
+		gap: $spacing-sm;
+		align-items: center;
+	}
+}
+
+.overview {
+	@include flex-layout(column, flex-start);
+	gap: $spacing-md;
+	font-size: $font-size-h2;
+	line-height: 40px;
+
+	@include media-query('tablet') {
+		gap: 20px;
+		font-size: $font-size-h3;
+		align-items: center;
+	}
+
+	@include media-query('mobile') {
+		gap: $spacing-xs;
+		font-size: $font-size-h4;
+	}
+}
+
+.overview .info {
+	@include flex-layout(column, flex-start);
+	gap: $spacing-xs;
+	font-size: $font-size-h5;
+	line-height: 19px;
+
+	@include media-query('tablet') {
+		font-size: $font-size-h6;
+		align-items: center;
+		gap: 12px;
+	}
+
+	@include media-query('mobile') {
+		font-size: $font-size-h7;
+		gap: 8px;
+	}
+}
+
+.color {
+	color: $lightOrange;
+}
+
+.back-button {
+	width: 100%;
+	@include spacing(padding, 10px, 20px, 10px, 20px);
+	font-size: 16px;
+	font-weight: bold;
+	color: $light;
+	background-color: $lightOrange;
+	border: none;
+	border-radius: 5px;
+	text-transform: uppercase;
+	transition:
+		background-color 0.3s ease,
+		transform 0.2s ease;
+}
+
+.back-button:hover {
+	background-color: $orange;
+}

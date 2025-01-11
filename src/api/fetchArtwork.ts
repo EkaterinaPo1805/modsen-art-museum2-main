@@ -1,3 +1,11 @@
+import { FETCH_ARTWORK_ERROR } from '@constants/errorMessages';
+import {
+	PUBLIC_DOMAIN,
+	UNKNOWN_TEXT,
+	UNPUBLIC_DOMAIN,
+} from '@constants/strings';
+import { API_URL } from '@constants/urls';
+
 interface ImageItem {
 	id: string;
 	title?: string;
@@ -8,11 +16,11 @@ interface ImageItem {
 
 export const fetchArtworkApi = async (page: number, imagesPerPage: number) => {
 	const response = await fetch(
-		`https://api.artic.edu/api/v1/artworks?page=${page}&limit=${imagesPerPage}`
+		`${API_URL}?page=${page}&limit=${imagesPerPage}`
 	);
 
 	if (!response.ok) {
-		throw new Error('Failed to fetch artwork data');
+		throw new Error(FETCH_ARTWORK_ERROR);
 	}
 
 	const data = await response.json();
@@ -20,9 +28,9 @@ export const fetchArtworkApi = async (page: number, imagesPerPage: number) => {
 	return {
 		data: data.data.map((item: ImageItem) => ({
 			id: item.id,
-			title: item.title || 'Unknown',
-			artist: item.artist_title || 'Unknown',
-			public_domain: item.is_public_domain ? 'Public' : 'Unpublic',
+			title: item.title || UNKNOWN_TEXT,
+			artist: item.artist_title || UNKNOWN_TEXT,
+			public_domain: item.is_public_domain ? PUBLIC_DOMAIN : UNPUBLIC_DOMAIN,
 			image_id: item.image_id,
 		})),
 		totalPages: data.pagination.total_pages,

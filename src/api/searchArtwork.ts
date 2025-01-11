@@ -1,3 +1,14 @@
+import {
+	FETCH_ARTWORK_ERROR,
+	NO_RESULTS_FOUND_ERROR,
+} from '@constants/errorMessages';
+import {
+	PUBLIC_DOMAIN,
+	UNKNOWN_TEXT,
+	UNPUBLIC_DOMAIN,
+} from '@constants/strings';
+import { API_URL } from '@constants/urls';
+
 interface ImageItem {
 	id: string;
 	title?: string;
@@ -8,24 +19,24 @@ interface ImageItem {
 
 export const searchArtworkApi = async (searchQuery: string) => {
 	const response = await fetch(
-		`https://api.artic.edu/api/v1/artworks/search?q=${searchQuery}&fields=id,title,artist_title,is_public_domain,image_id`
+		`${API_URL}/search?q=${searchQuery}&fields=id,title,artist_title,is_public_domain,image_id`
 	);
 
 	if (!response.ok) {
-		throw new Error('Failed to fetch search results');
+		throw new Error(FETCH_ARTWORK_ERROR);
 	}
 
 	const data = await response.json();
 
 	if (!data.data || data.data.length === 0) {
-		throw new Error('No results found');
+		throw new Error(NO_RESULTS_FOUND_ERROR);
 	}
 
 	return data.data.map((item: ImageItem) => ({
 		id: item.id,
-		title: item.title || 'Unknown',
-		artist: item.artist_title || 'Unknown',
-		public_domain: item.is_public_domain ? 'Public' : 'Unpublic',
+		title: item.title || UNKNOWN_TEXT,
+		artist: item.artist_title || UNKNOWN_TEXT,
+		public_domain: item.is_public_domain ? PUBLIC_DOMAIN : UNPUBLIC_DOMAIN,
 		image_id: item.image_id,
 	}));
 };

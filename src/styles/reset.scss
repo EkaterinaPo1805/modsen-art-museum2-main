@@ -1,20 +1,18 @@
-@use '@styles/abstracts/variables' as *;
-@use '@styles/abstracts/mixins' as *;
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
 
 body {
-	padding: 0;
-	margin: 0;
-	font-size: 16px;
-	font-weight: 400;
+	@include spacing(padding, 0);
+	@include spacing(margin, 0);
+	@include font-style($font-primary, $font-weight);
 	background: $primary;
 	width: 100%;
-	font-family: 'Lexend Deca', sans-serif;
 }
 
-.page {
-	display: flex;
-	flex-direction: column;
-	gap: 120px;
+.page,
+main {
+	@include flex-layout(column, stretch);
+	gap: $spacing-xxl;
 
 	@include media-query('desktop') {
 		gap: 80px;
@@ -28,80 +26,123 @@ body {
 a {
 	color: $light;
 	text-decoration: none;
-	margin: 0px;
-	padding: 0;
+	@include spacing(margin, 0);
+	@include spacing(padding, 0);
 }
 
 input,
 button {
 	border: none;
 	outline: none;
-	padding: 0;
-	margin: 0;
+	@include spacing(margin);
+	@include spacing(padding);
 	height: auto;
 	background-color: transparent;
 }
 
-h1 {
-	padding: 0;
-	margin: 0;
-	@include font-style('Lexend Deca', 700, 64px);
-	text-transform: capitalize;
+header,
+footer {
+	@include spacing(padding, $spacing-md, 0px, $spacing-md, 0px);
+	@include flex-layout(row, stretch);
+	justify-content: center;
+	width: auto;
+
+	@include media-query('tablet') {
+		@include spacing(
+			padding,
+			$spacing-tablet,
+			$spacing-m,
+			$spacing-tablet,
+			$spacing-m
+		);
+	}
+
+	@include media-query('mobile') {
+		@include spacing(
+			padding,
+			$spacing-sm,
+			$spacing-mobile,
+			$spacing-sm,
+			$spacing-mobile
+		);
+	}
+}
+
+h1,
+h2,
+h3 {
+	@include spacing(margin);
+	@include spacing(padding);
 	color: $black;
+}
+
+h1 {
+	font-size: $font-size-h1;
+	font-weight: $font-weight-bold;
+	text-transform: capitalize;
 	text-align: center;
 
 	span {
 		color: $orange;
 	}
 
-	@include media-query('desktop') {
-		font-size: 48px;
+	@include media-query('tablet') {
+		font-size: $font-size-h2;
 	}
 
-	@include media-query('tablet') {
-		font-size: 32px;
+	@include media-query('mobile') {
+		font-size: $font-size-h3;
 	}
 }
 
 h2 {
-	padding: 0;
-	margin: 0;
-	@include font-style('Lexend Deca', 400, 32px);
-	color: $black;
-
-	@include media-query('desktop') {
-		font-size: 24px;
-	}
+	font-size: $font-size-h2;
+	font-weight: 400;
+	line-height: 40px;
 
 	@include media-query('tablet') {
-		font-size: 20px;
+		font-size: $font-size-h3;
+	}
+
+	@include media-query('mobile') {
+		font-size: $font-size-h4;
 	}
 }
 
 h3 {
-	padding: 0;
-	margin: 0;
-	@include font-style('Lexend Deca', 400, 16px);
+	font-size: $font-size-h5;
 	color: $lightOrange;
-
-	@include media-query('desktop') {
-		font-size: 14px;
-	}
+	font-weight: 400;
+	line-height: 20px;
 
 	@include media-query('tablet') {
-		font-size: 12px;
+		font-size: $font-size-h6;
+	}
+
+	@include media-query('mobile') {
+		font-size: $font-size-h7;
 	}
 }
 
-.search-container {
+.title,
+.section-title {
+	@include flex-layout(column, center);
+	gap: 0px;
+}
+
+.favorites-title {
 	display: flex;
-	flex-direction: column;
-	gap: 72px;
-	align-items: center;
+	flex-direction: row;
+	gap: 4px;
+}
+
+.search-container {
+	@include flex-layout(column, center);
+	gap: $spacing-xl;
 	align-self: center;
 	width: 762px;
 
-	@include media-query('desktop') {
+	@include media-query('tablet') {
 		width: 100%;
 		gap: 60px;
 	}
@@ -116,43 +157,16 @@ h3 {
 	width: 100%;
 }
 
-.title {
-	display: flex;
-	flex-direction: column;
-	gap: 0px;
-	align-items: center;
-}
-
-.section-title {
-	display: flex;
-	flex-direction: column;
-	gap: 0px;
-	align-items: center;
-}
-
-.color {
-	color: $lightOrange;
-}
-
-.favorites-title {
-	display: flex;
-	flex-direction: row;
-	gap: 4px;
-}
-
 .bookmark {
-	width: 74px;
-	height: 74px;
+	@include size(74px, 74px);
 	align-self: center;
 
-	@include media-query('desktop') {
-		width: 48px;
-		height: 48px;
+	@include media-query('tablet') {
+		@include size(48px, 48px);
 	}
 
-	@include media-query('tablet') {
-		width: 32px;
-		height: 32px;
+	@include media-query('mobile') {
+		@include size(32px, 32px);
 	}
 }
 

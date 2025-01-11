@@ -1,19 +1,9 @@
+import { NO_RESULTS_FOUND_ERROR } from '@constants/errorMessages';
+import { CARD_COMPACT, CARD_DETAILED } from '@constants/strings';
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchArtworkData } from '@store/actions/fetchArtworkAction';
 
-export interface ArtworkData {
-	id: number;
-	title: string;
-	artist: string;
-	public_domain: string;
-	artist_nationality: string;
-	dimensions: string;
-	credit_line: string;
-	repository: string;
-	date: string;
-	image_id: string;
-	searchQuery?: string;
-}
+import { fetchArtworkData } from '@store/actions/fetchArtworkAction';
+import { ArtworkData } from '@appTypes/dataFetch';
 
 interface ArtworkDataState {
 	compactData: ArtworkData[];
@@ -41,19 +31,19 @@ const artworkDataSlice = createSlice({
 		builder
 			.addCase(fetchArtworkData.pending, (state, action) => {
 				const type = action.meta.arg.type;
-				if (type === 'compact') {
+				if (type === CARD_COMPACT) {
 					state.loadingCompact = true;
-				} else if (type === 'detailed') {
+				} else if (type === CARD_DETAILED) {
 					state.loadingDetailed = true;
 				}
 			})
 			.addCase(fetchArtworkData.fulfilled, (state, action) => {
 				const { imageData, totalPages, type } = action.payload;
 				state.error = null;
-				if (type === 'compact') {
+				if (type === CARD_COMPACT) {
 					state.compactData = imageData;
 					state.loadingCompact = false;
-				} else if (type === 'detailed') {
+				} else if (type === CARD_DETAILED) {
 					state.detailedData = imageData;
 					state.loadingDetailed = false;
 				}
@@ -63,7 +53,9 @@ const artworkDataSlice = createSlice({
 				state.loadingCompact = false;
 				state.loadingDetailed = false;
 				state.error =
-					action.error instanceof Error ? action.error.message : 'No data';
+					action.error instanceof Error
+						? action.error.message
+						: NO_RESULTS_FOUND_ERROR;
 			});
 	},
 });

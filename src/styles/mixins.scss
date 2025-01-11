@@ -1,0 +1,52 @@
+@mixin spacing($property, $top: 0, $right: 0, $bottom: 0, $left: 0) {
+	#{$property}: $top $right $bottom $left;
+}
+
+@mixin font-style($font-family, $font-weight) {
+	font-family: $font-family;
+	font-weight: $font-weight;
+}
+
+@mixin size($width, $height) {
+	width: $width;
+	height: $height;
+}
+
+@mixin media-query($size) {
+	@if $size == 'tablet' {
+		@media (max-width: 1440px) {
+			@content;
+		}
+	} @else if $size == 'mobile' {
+		@media (max-width: 768px) {
+			@content;
+		}
+	}
+}
+
+@mixin form-padding($tablet, $mobile) {
+	@include media-query('tablet') {
+		margin: 0px $tablet;
+	}
+
+	@include media-query('mobile') {
+		margin: 0px $mobile;
+	}
+}
+
+@mixin navigation-item-style(
+	$font-family,
+	$font-weight,
+	$font-size,
+	$line-height
+) {
+	@include font-style($font-family, $font-weight, $font-size, $line-height);
+	color: white;
+	text-decoration: none;
+}
+
+@mixin flex-layout($direction, $align-items) {
+	display: flex;
+	flex-direction: $direction;
+	align-items: $align-items;
+}

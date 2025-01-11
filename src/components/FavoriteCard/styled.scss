@@ -1,0 +1,33 @@
+@use '@styles/mixins' as *;
+@use '@styles/variables' as *;
+
+.favoritecard-container {
+	@include flex-layout(column, center);
+	gap: 80px;
+	width: auto;
+	@include form-padding($spacing-tablet, $spacing-mobile);
+
+	@include media-query('tablet') {
+		gap: 60px;
+	}
+
+	@include media-query('mobile') {
+		width: auto;
+		gap: 60px;
+	}
+}
+
+.favoritecard-container .works-gallery {
+	@include flex-layout(row, center);
+	flex-wrap: wrap;
+	gap: $spacing-xs;
+	width: 1280px;
+
+	@include media-query('tablet') {
+		width: 100%;
+	}
+
+	@include media-query('mobile') {
+		width: auto;
+	}
+}

@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { fetchArtworkDetailApi } from '@api/fetchArtworkDetail';
-import { ArtworkData } from '@store/reducers/artworkDetailReducer';
+import { ArtworkData } from '@appTypes/dataFetch';
+import { UNKNOWN_ERROR } from '@constants/errorMessages';
 
 export const fetchArtworkDetail = createAsyncThunk<
 	ArtworkData,
@@ -14,6 +15,6 @@ export const fetchArtworkDetail = createAsyncThunk<
 		if (error instanceof Error) {
 			return rejectWithValue(error.message);
 		}
-		return rejectWithValue('An unknown error occurred');
+		return rejectWithValue(UNKNOWN_ERROR);
 	}
 });
