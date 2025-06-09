@@ -1,0 +1,7 @@
+@use '@styles/mixins' as *;
+
+.logo-text {
+	@include media-query('mobile') {
+		display: none;
+	}
+}

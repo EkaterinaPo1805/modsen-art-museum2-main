@@ -1,0 +1,43 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+header {
+	background: linear-gradient(
+		90deg,
+		#343333 38.05%,
+		#484848 69.22%,
+		#282828 98.98%
+	);
+}
+
+.header_container {
+	@include flex-layout(row, center);
+	justify-content: space-between;
+	@include spacing(margin, 0, auto, 0, auto);
+	width: 1280px;
+
+	@include media-query('tablet') {
+		justify-content: space-between;
+	}
+}
+
+@include media-query('mobile') {
+	.navigation {
+		display: none;
+		position: absolute;
+		top: 70px;
+		right: 20px;
+		background-color: $black;
+		border-radius: 8px;
+		padding: 20px;
+		width: 200px;
+		box-shadow: 0 4px 8px #0000001a;
+		flex-direction: column;
+		align-items: flex-start;
+		z-index: 99;
+
+		&.open {
+			display: flex;
+		}
+	}
+}

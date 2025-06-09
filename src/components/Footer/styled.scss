@@ -1,0 +1,28 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+footer {
+	background: $light;
+}
+
+.footer-container {
+	@include flex-layout(row, center);
+	position: relative;
+	justify-content: space-between;
+	width: 1280px;
+	@include spacing(margin, 0, auto, 0, auto);
+
+	@include media-query('desktop') {
+		width: 100%;
+	}
+
+	@include media-query('tablet') {
+		width: 100%;
+	}
+}
+
+footer .logo {
+	position: absolute;
+	left: 0;
+	top: 0;
+}

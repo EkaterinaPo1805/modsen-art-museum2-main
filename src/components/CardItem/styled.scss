@@ -1,0 +1,160 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.card-link {
+	text-decoration: none;
+	color: inherit;
+
+	@include media-query('tablet') {
+		width: 100%;
+        flex-grow: 1;
+	}
+}
+
+.card {
+	@include flex-layout(row, center);
+	gap: $spacing-xs;
+	background-color: $light;
+	padding: $spacing-xs;
+	@include size(384px, 98px);
+	overflow: hidden;
+	position: relative;
+
+	@include media-query('tablet') {
+		width: auto;
+	}
+}
+
+.card.detailed {
+	@include flex-layout(column, center);
+	position: relative;
+	gap: 0;
+	@include spacing(padding, 0);
+	@include size(387px, 100%);
+	background-color: transparent;
+
+	@include media-query('tablet') {
+		width: auto;
+	}
+}
+
+.card .image-container {
+	@include size(80px, 80px);
+}
+
+.card.detailed .image-container {
+	@include size(100%, 444px);
+}
+
+.card .image {
+	@include size(80px, 80px);
+	object-fit: cover;
+}
+
+.card.detailed .image {
+	@include size(100%, 444px);
+	position: relative;
+	object-fit: cover;
+}
+
+.card.detailed .form {
+	gap: 8px;
+	@include spacing(padding, $spacing-md, $spacing-sm, $spacing-md, $spacing-sm);
+	@include size(310px, 68px);
+	background-color: $light;
+	position: relative;
+	bottom: 62px;
+	@include form-padding(margin);
+
+	@include media-query('tablet') {
+		width: 80%;
+		align-self: center;
+	}
+}
+
+.card .form {
+	@include flex-layout(row, center);
+	flex-grow: 1;
+	gap: $spacing-xs;
+
+	@include media-query('tablet') {
+		width: 100%;
+		justify-content: space-between;
+	}
+}
+
+.card .info {
+	@include flex-layout(column, flex-start);
+	@include font-style($font-secondary, $font-weight);
+	justify-content: space-between;
+	height: 98px;
+	flex-grow: 1;
+}
+
+.card .art-and-artist {
+	@include flex-layout(column, flex-start);
+	justify-content: space-between;
+	@include spacing(padding, 4px, 0px, 4px, 0px);
+	height: 55px;
+}
+
+.card .art {
+	@include spacing(margin);
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	@include font-style($font-secondary, $font-weight-medium);
+	font-size: $font-size-card-art;
+	line-height: 27px;
+	line-clamp: 1;
+}
+
+.card.detailed .art {
+	@include font-style($font-primary, $font-weight-medium);
+}
+
+.card .artist {
+	@include spacing(margin);
+	color: $lightOrange;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: $font-size-card;
+	line-height: 27px;
+	line-clamp: 1;
+}
+
+.card.detailed .artist {
+	@include font-style($font-primary, $font-weight);
+}
+
+.card .publicDomain {
+	@include spacing(margin);
+	font-weight: $font-weight-bold;
+	font-size: $font-size-card;
+	line-height: 27px;
+}
+
+.card.detailed .publicDomain {
+	@include font-style($font-primary, $font-weight-bold);
+}
+
+figure {
+	margin: 0;
+}
+
+.card.detailed .image-error {
+    @include size(auto, 444px);
+}
+
+.card .image-error {
+    @include flex-layout(row, center);
+    @include size(80px, 80px);
+	justify-content: center;
+    background-color: $lightOrange;
+    color: $light;
+}

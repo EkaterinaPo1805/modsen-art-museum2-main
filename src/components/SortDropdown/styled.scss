@@ -1,0 +1,62 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+
+.sort-dropdown {
+	position: relative;
+	width: auto;
+
+	@include form-padding(padding);
+
+	select {
+		@include font-style($font-primary, $font-weight);
+		font-size: $font-size-h5;
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		width: 100%;
+		@include spacing(padding, 10px, 40px, 10px, 10px);
+		border: 1px solid $black 20%;
+		border-radius: 5px;
+		background-color: $light;
+		color: $black;
+		cursor: pointer;
+		outline: none;
+		transition:
+			border-color 0.3s ease,
+			box-shadow 0.3s ease;
+	}
+
+	select option {
+		@include font-style($font-primary, $font-weight);
+		font-size: $font-size-h5;
+		@include spacing(padding, 5px, 10px, 5px, 10px);
+		color: $black;
+		background-color: $light;
+		border: none;
+		outline: none;
+		box-sizing: border-box;
+		max-width: 100%;
+
+		&:hover,
+		&:focus {
+			background-color: $orange;
+			color: $light;
+		}
+	}
+
+	&::after {
+		content: '▼';
+		position: absolute;
+		top: 65%;
+		right: 15px;
+		transform: translateY(-50%);
+		pointer-events: none;
+		font-size: 12px;
+		color: $black;
+		@include form-padding(padding);
+	}
+
+	select::-ms-expand {
+		display: none;
+	}
+}

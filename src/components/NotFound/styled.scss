@@ -1,0 +1,18 @@
+@use '@styles/variables' as *;
+
+.link {
+    display: inline-block;
+    @include spacing(margin, 0, auto, 0, auto);
+    @include spacing(padding, 10px, 20px, 10px, 20px);
+    background-color: $lightOrange;
+    color: $light;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: $font-size-h5;
+    transition: background-color 0.3s ease;
+  }
+  
+  .link:hover {
+    background-color: $orange;
+  }
+  
